@@ -1,3 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('自己紹介サイトへようこそ！');
+new LuminousGallery(document.querySelectorAll('.grid-gallery'), {}, {
+caption: function(trigger) {
+return trigger.querySelector('img').getAttribute('alt');
+}
 });

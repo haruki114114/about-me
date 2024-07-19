@@ -69,6 +69,9 @@ html {
     object-fit: cover;
     object-position: center;
 }
+.color-1{
+    filter:brightness(100%);
+}
 
 .lum-lightbox.lum-open {
     z-index: 4;

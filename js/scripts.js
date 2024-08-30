@@ -3,20 +3,22 @@ new LuminousGallery(document.querySelectorAll('.grid-gallery'), {}, {
         return trigger.querySelector('img').getAttribute('alt');
     }
 });
+// ページ上部に移動するボタンの処理
+const topButton = document.getElementById('topBtn');
 
-const topButton = document.querySelector('.topButton');
+// スクロール時にボタンの表示を制御
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+};
 
-topButton.addEventListener('click', () => {
-window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-});
-});
-
-window.addEventListener('scroll', () => {
-if(window.scrollY > 300) {
-    topButton.style.display = 'block';
-} else {
-    topButton.style.display = 'none';
-}
-});
+// ボタンクリックでページ上部に移動
+topButton.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};

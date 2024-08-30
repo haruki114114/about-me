@@ -1,24 +1,26 @@
-new LuminousGallery(document.querySelectorAll('.grid-gallery'), {}, {
-    caption: function(trigger) {
-        return trigger.querySelector('img').getAttribute('alt');
+window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.scrollY > 100) {
+        scrollToTopBtn.style.display = 'block';
+    } else {
+        scrollToTopBtn.style.display = 'none';
     }
 });
-// ページ上部に移動するボタンの処理
-const topButton = document.getElementById('topBtn');
 
-// スクロール時にボタンの表示を制御
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        topButton.style.display = "block";
+// ボタンを表示する条件（スクロール量が100pxを超えた場合）
+window.addEventListener('scroll', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (window.scrollY > 100) {
+        scrollToTopBtn.style.display = 'block';
     } else {
-        topButton.style.display = "none";
+        scrollToTopBtn.style.display = 'none';
     }
-};
+});
 
-// ボタンクリックでページ上部に移動
-topButton.onclick = function() {
+// ボタンがクリックされた時にページ上部にスクロール
+document.getElementById('scrollToTopBtn').addEventListener('click', function() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
-};
+});

@@ -1,24 +1,40 @@
 @charset "utf-8";
 
 html {
-    font-family: 'Noto Serif Japanese',serif;
+    font-family: 'Noto Serif JP', serif;
 }
 
+body {
+    margin: 0;
+    background-image: url('images/image27.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    height: 100vh;
+}
 
 header {
     background: #2860c9;
     color: #fff;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 0;
     text-align: center;
 }
 
-h2{
+h2 {
     font-size: 3.5rem;
     padding: 0;
     text-align: center;
 }
 
-p{
+p {
     font-size: 2rem;
     padding: 0;
     text-align: center;
@@ -67,49 +83,52 @@ footer {
     grid-template-columns: repeat(2, 46vw);
     grid-template-rows: repeat(8, 46vw);
 }
+
 .grid-item {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
-.color-1{
-    filter:brightness(100%);
+
+.color-1 {
+    filter: brightness(100%);
 }
 
 .lum-lightbox.lum-open {
     z-index: 4;
 }
+
 .lum-lightbox-inner img {
     max-width: 120vw;
     max-height: 80vh;
 }
 
 @media (min-width: 600px) {
-        .header-name {
-            font-size: 5rem;
-        }
-        .grid {
-            width: 80vw;
-            gap: 1vw;
-            grid-template-columns: repeat(3, 26vw);
-            grid-template-rows: repeat(5, 26vw);
-        }
-        .grid-big-bottom {
-            grid-column: 2/4;
-            grid-row: 4/5;
-        }
-        .grid-item {
-            transition: .3s;
-        }
-        .grid-item:hover {
-            filter: grayscale(0);
-            box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
-            transform: scale(1.1);
-            z-index: 3;
-            position: relative;
-        }
+    .header-name {
+        font-size: 5rem;
     }
+    .grid {
+        width: 80vw;
+        gap: 1vw;
+        grid-template-columns: repeat(3, 26vw);
+        grid-template-rows: repeat(5, 26vw);
+    }
+    .grid-big-bottom {
+        grid-column: 2/4;
+        grid-row: 4/5;
+    }
+    .grid-item {
+        transition: .3s;
+    }
+    .grid-item:hover {
+        filter: grayscale(0);
+        box-shadow: 0 0 2rem rgba(0, 0, 0, .5);
+        transform: scale(1.1);
+        z-index: 3;
+        position: relative;
+    }
+}
 
 nav {
     display: flex;
@@ -122,7 +141,6 @@ nav {
 .location-map {
     width: 100%;
     height: 100%;
-
 }
 
 .title-center {
@@ -133,16 +151,19 @@ table {
     margin: 3.5rem 0;
     width: 100%;
 }
+
 th,
 td {
     display: block;
 }
+
 th {
     font-weight: normal;
     background: #f8f6f2;
     vertical-align: middle;
     padding: 1rem;
 }
+
 td {
     padding: .75rem 1rem 1.75rem;
 }
@@ -157,12 +178,14 @@ textarea {
     padding: .5rem;
     width: 100%;
 }
+
 input[type='text']::placeholder,
 input[type='email']::placeholder,
 input[type='url']::placeholder,
 textarea::placeholder {
     color: #bbb;
 }
+
 textarea {
     height: 10rem;
 }
@@ -175,6 +198,7 @@ label {
 .select-box {
     position: relative;
 }
+
 .select-box::after {
     display: inline-block;
     position: absolute;
@@ -182,7 +206,34 @@ label {
     right: 1rem;
 }
 
-.ccc {
-    color: #ffffff;
-    -webkit-text-stroke: 0.4px #000000;
+.show {
+    display: block;
+    margin: 0 auto;
+}
+
+h3 {
+    font-size: 2.2rem;
+    padding: 0;
+    text-align: center;
+}
+
+.topButton {
+    display: none;   /*非表示*/
+    position: fixed; /*位置を固定*/
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background-color: #0d7df5;
+    font-size: 20px;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid lightgray;
+}
+
+.topButton:hover {
+    font-weight: bold;
+    background-color: #f99f3e;
+    border: 5px solid lightgray;
 }
